@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RPG Adventure</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="img/favicon.png">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/dado.css">
+</head>
+<body>
+	<div class="container-fluid">
+	<div class="row"> 
+		<div id="lat-izq" class="col-lg-2 col-md-2 col-sm-1">
+			<form>
+				<label>Indica el % de zoom que desas: </label>
+				<input id="zoom" type="number" name="zoom">
+				<i class="glyphicon glyphicon-search"></i>
+			</form>
+		</div>
+		<div id="tablero" class="col-lg-8 col-md-8 col-sm-12">	
+		</div>
+		<div id="lat-der" class="col-lg-2 col-md-2 col-sm-1">
+			<div class="wrap">
+   				<div id="dice" class="dice dice_1" onclick="play()"></div>
+   				<audio id="audio" src="sounds/dice2.mp3" ></audio>
+    		</div>
+    		<p id="result">Clica sobre el dado para saber tus movimientos</p></div>
+		</div>
+	</div>
+	</div>
+	<div id="casilla">
+	
+	
+	<script type="text/javascript" src="js/svg.js"></script>
+	<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/dado.js"></script>
+	<script type="text/javascript" src="js/avatar.js"></script>
+	<script type="text/javascript" src="js/custom.js"></script>
+	
+
+	<script>
+	var audio = new Audio('sounds/soundtrack.wav');
+	audio.play();
+
+	function play(){
+   		var audio = document.getElementById("audio");
+  		audio.play();
+    }
+	</script>
+</body>
+</html>
