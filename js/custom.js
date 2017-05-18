@@ -1,5 +1,6 @@
 var draw = SVG('tablero')
 var ava;
+ava = new avatar(100, 380);
 
 var num;
 
@@ -24,7 +25,6 @@ for (var i = 1 ; i <= 10; i++) {
 	xval = parseInt(xval) + 100;
 	xval = xval.toString();
 }
-i++
 casillas_class.push(casillas.image('img/casillas/jefe.svg',60 ,80).attr({
 	x: '1100', 
 	id: 'cas'+i
@@ -39,7 +39,7 @@ for (var i = casillas_class.length - 1; i >= 0; i--) {
 	casillas_class[i].addClass('inactiva')
 }
 
-casillas.move(100, 400)		
+casillas.move(100, 425)		
 		
 $(".inactiva").mouseout(function(){
 	$(this).attr("opacity", "0.3");
@@ -47,7 +47,12 @@ $(".inactiva").mouseout(function(){
 
 
 /*Viewbox*/
-var view = draw.viewbox(0, 100, 700, 700);
+var view = draw.viewbox(ava.x, ava.y, 600, 600);
+
 $("#zoom").change(function(){
-	console.log($(this).val());
+	view.viewbox(ava.x, ava.y, $(this).val(), $(this).val());
 })
+/*Desactivar introducción manual del Viewbox*/
+$("[type='number']").keypress(function (evt) {
+    evt.preventDefault();
+});
