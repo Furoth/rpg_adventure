@@ -13,7 +13,7 @@ svg{
 }
 
 #lat-izq, #lat-der{
-	background-color: red;
+	background-color: lightgreen;
 	margin: 0;
 	padding: 0;
 	width: 20%;
@@ -24,6 +24,10 @@ svg{
 	background-image: url('../img/battlebg/CmBkGrTr.png');
 	background-repeat: no-repeat;
 	background-size: contain;
+}
+
+.inactiva{
+	z-index: -10;
 }
 
 #tablero{
@@ -59,3 +63,10 @@ svg{
 	padding: 0;
 }
 
+#avatar{
+	overflow: hidden;
+	width: 100px;
+	height: 100px;
+	background: url('../img/characters/guerrero/Swordsman.png');
+	z-index: 998;
+}
